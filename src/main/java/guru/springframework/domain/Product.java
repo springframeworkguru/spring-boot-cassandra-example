@@ -50,4 +50,8 @@ public class Product implements Serializable{
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public Product() {
+        id = UUID.randomUUID();
+    }
 }
