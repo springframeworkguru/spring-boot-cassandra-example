@@ -1,5 +1,7 @@
 package guru.springframework.domain;
 
+import com.datastax.driver.core.DataType;
+import org.springframework.data.cassandra.mapping.CassandraType;
 import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.Table;
 
@@ -14,6 +16,7 @@ import java.util.UUID;
 public class Product implements Serializable{
 
     @PrimaryKey
+    @CassandraType(type = DataType.Name.UUID)
     private UUID id;
     private String description;
     private BigDecimal price;
